@@ -21,7 +21,6 @@ def main() -> None:
         pandas: ModuleType = check_package("pandas", "Data manipulation")
         numpy: ModuleType = check_package("numpy", "Numerical computation")
         matplotlib: ModuleType = check_package("matplotlib", "Visualization")
-        requests: ModuleType = check_package("requests", "Network access")
         print()
         print("Analyzing Matrix data...")
         dice_min: int = 1
