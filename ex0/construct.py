@@ -33,7 +33,10 @@ def main() -> None:
         print("Safe to install packages without affecting the global system.")
         print()
         print("Package installation path:")
-        print(site.getsitepackages()[0])
+        try:
+            print(site.getsitepackages()[0])
+        except AttributeError:
+            print("Package path not available in this environment.")
 
 
 if __name__ == "__main__":

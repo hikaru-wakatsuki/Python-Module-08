@@ -45,7 +45,7 @@ def main() -> None:
         print()
         print("Analysis complete!")
         print(f"Results saved to: {output_file}")
-    except (PermissionError, TypeError) as error:
+    except (PermissionError, TypeError, ValueError) as error:
         print(error)
         sys.exit(1)
 
