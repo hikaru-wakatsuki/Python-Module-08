@@ -8,6 +8,11 @@ def load_env() -> dict[str, str | None]:
     except ImportError:
         print("ERROR: python-dotenv not installed")
         sys.exit(1)
+    if not os.path.exists(".env"):
+        print("ERROR: .env file not found")
+        print("Create from .env.example:")
+        print("cp .env.example .env")
+        sys.exit(1)
     load_dotenv()
     config: dict[str, str | None] = {}
     config["MATRIX_MODE"] = os.getenv("MATRIX_MODE")
@@ -47,10 +52,7 @@ def main() -> None:
     print()
     print("Environment security check:")
     print("[OK] No hardcoded secrets detected")
-    if os.path.exists(".env"):
-        print("[OK] .env file properly configured")
-    else:
-        print("[ERROR] .env file not found")
+    print("[OK] .env file properly configured")
     print("[OK] Production overrides available")
     print()
     print("The Oracle sees all configurations.")
