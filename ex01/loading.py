@@ -8,8 +8,13 @@ def check_package(name: str, message: str) -> ModuleType:
         version = getattr(module, "__version__", "unknown")
         print(f"[OK] {name} ({version}) - {message} ready")
         return module
-    except (ImportError):
-        raise ImportError(f"[MISSING] {name} - Exiting program.")
+    except ImportError:
+        print(f"[MISSING] {name}")
+        print("Install dependencies using:")
+        print("pip install -r requirements.txt")
+        print("or")
+        print("poetry install")
+        sys.exit(1)
 
 
 def main() -> None:
@@ -37,9 +42,10 @@ def main() -> None:
         matplotlib.pyplot.ylabel("Frequency")
         output_file = "matrix_analysis.png"
         matplotlib.pyplot.savefig(output_file)
-        print("\nAnalysis complete!")
+        print()
+        print("Analysis complete!")
         print(f"Results saved to: {output_file}")
-    except Exception as error:
+    except (PermissionError, TypeError) as error:
         print(error)
         sys.exit(1)
 
