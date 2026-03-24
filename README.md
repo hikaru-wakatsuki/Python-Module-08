@@ -195,7 +195,7 @@ AI usage in this project:
 
 - AI was used for documentation support and README drafting.
 - It was used to summarize the project subject, structure the README, and provide bilingual English/Japanese wording.
-- The implementation, dependency setup, and configuration behavior should still be checked manually before submission and peer review.
+
 
 ### 日本語
 
@@ -214,7 +214,6 @@ AI usage in this project:
 
 - AI はドキュメント補助と README 作成支援に使用しました。
 - 課題内容の要約、README の構成整理、英語と日本語の文章調整に利用しました。
-- 実装内容、依存関係の導入手順、設定ファイルの挙動については、提出前と peer review 前に手動で確認する前提です。
 
 ## Notes / 補足
 
